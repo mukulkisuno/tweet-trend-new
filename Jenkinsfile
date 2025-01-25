@@ -26,7 +26,7 @@ environment {
                 -Dsonar.sources=./src \
                 -Dsonar.host.url=https://sonarcloud.io/ \
                 -Dsonar.login=3602b425dfa750fcbe1525981b49f27757d52cfd \
-                -Dsonar.exclusions=**/*.java
+                -Dsonar.java.binaries=target/classes
             """
         }
     }
