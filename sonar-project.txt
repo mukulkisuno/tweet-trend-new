@@ -1,0 +1,9 @@
+sonar.verbos=true
+sonar.organization=mukulkisuno01
+sonar.projectKey=mukulkisuno01-key_twittertrend
+sonar.projectName=twittertrend
+sonar.language=java
+sonar.sourceEncoding=UTF-8
+sonar.sources=.
+sonar.java.binaries=target/classes
+sonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
