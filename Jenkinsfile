@@ -22,10 +22,10 @@ environment {
             sh """
                 ${scannerHome}/bin/sonar-scanner -X \
                 -Dsonar.projectKey=mukulkisuno01-key_twittertrend \
-                -Dsonar.organization=mukulkisuno01 \
+                -Dsonar.organization=mukulkisuno01-key \
                 -Dsonar.sources=./src \
                 -Dsonar.host.url=https://sonarcloud.io/ \
-                -Dsonar.login=3602b425dfa750fcbe1525981b49f27757d52cfd
+                -Dsonar.login=3602b425dfa750fcbe1525981b49f27757d52cfd 
             """
         }
     }
