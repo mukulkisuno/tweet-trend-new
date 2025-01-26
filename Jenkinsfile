@@ -61,18 +61,20 @@ stage("Jar Publish") {
             def server = Artifactory.newServer(url: "https://mukulkisuno.jfrog.io/artifactory", credentialsId: "artifact-cred")
             def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}"
             
-            def uploadSpec = """{
-                "files": [
-                    {
-                        "pattern": "jarstaging/*",
-                        "target": "libs-release-local/",
-                        "flat": false,
-                        "props": "${properties}",
-                        "exclusions": ["*.sha1", "*.md5"],
-                        "overwrite": true
-                    }
-                ]
-            }"""
+def uploadSpec = """
+{
+    "files": [
+        {
+            "pattern": "jarstaging/*",
+            "target": "maven-libs-release-local/",
+            "flat": "false",
+            "props": "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}",
+            "exclusions": ["*.sha1", "*.md5"],
+            "overwrite": true
+        }
+    ]
+}
+"""
             
             def buildInfo = server.upload(uploadSpec)
             buildInfo.env.collect()
