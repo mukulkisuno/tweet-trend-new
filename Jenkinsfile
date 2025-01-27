@@ -103,7 +103,7 @@ environment {
             }
         }
     }
-    stage ("Deploy") {
+    stage ("Deploy Kubernetes micro service") {
         steps{
             script {
                 sh './deploy.sh'
